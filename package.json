@@ -25,7 +25,21 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepare": "husky install",
+    "lint": "eslint --ext .jsx,.js,.tsx,.ts src/",
+    "lint-staged": "lint-staged",
+    "lint:precommit": "eslint 'src/**/*.{ts,tsx}' --max-warnings 0",
+    "fmt:precommit": "prettier -l './**/*.{js,jsx,ts,tsx,json,css,scss}'"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "npm run lint:precommit",
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run fmt:precommit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -70,8 +84,11 @@
     "@typescript-eslint/parser": "^5.27.1",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-storybook": "^0.5.13",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prop-types": "^15.8.1",
     "webpack": "^5.73.0"
   }
