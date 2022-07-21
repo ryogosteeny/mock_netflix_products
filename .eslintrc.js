@@ -10,16 +10,21 @@ module.exports = {
     "plugin:storybook/recommended",
     "prettier",
   ],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  settings: {
+    react: {
+      version: "detect",
     },
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  plugins: ["react", "@typescript-eslint"],
-  rules: {
-    "@typescript-eslint/no-non-null-assertion": "off",
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+    plugins: ["react", "@typescript-eslint"],
+    rules: {
+      "@typescript-eslint/no-non-null-assertion": "off",
+    },
   },
 };
