@@ -1,0 +1,22 @@
+.contents-ly {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-ly {
+  height: 68px;
+  padding: 0 60px;
+}
+
+.img-ly {
+  width: 100%;
+}
+
+.main-ly {
+  width: 100%;
+}
+
+.main {
+  /* TODO 横一列完結で各カテゴリー一覧の表示をさせる */
+}
